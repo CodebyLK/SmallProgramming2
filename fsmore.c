@@ -49,10 +49,11 @@ int main(const int argc, char *argv[]) {
                 printf("%s", line);
                 char *temp[2];
                 fgets(temp, sizeof(temp), stdin);
-                FILE *tty = fopen("/dev/tty", "r");
-                printf("--More--");
-                getc(tty);
-                fclose(tty);
+                getchar();
+                // FILE *tty = fopen("/dev/tty", "r");
+                // printf("--More--");
+                // getc(tty);
+                // fclose(tty);
                 count = 0;
             }
 
