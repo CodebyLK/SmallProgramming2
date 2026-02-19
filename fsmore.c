@@ -4,8 +4,9 @@
 
 
 int main(const int argc, char *argv[]) {
-    int *count = 0;
+    int count = 0;
 
+    //
     for (int i = 1; i < argc; i++) {
         FILE *fp = fopen(argv[i], "r");
         if (fp == NULL) {
@@ -14,7 +15,7 @@ int main(const int argc, char *argv[]) {
         }
 
         const char *line_env = getenv("LINES");
-        int *max_lines = 24; // Default
+        int max_lines = 24; // Default
 
         if (line_env != NULL) {
             char *endptr;
@@ -33,7 +34,7 @@ int main(const int argc, char *argv[]) {
             }
         }
 
-        char line[24];  //Container - Physical size of memory block
+        char line[200];  //Container - Physical size of memory block
 
         //Three arguments of fgets:
             //1. Pointer to a character array (Destination where read string is stored)
@@ -42,15 +43,20 @@ int main(const int argc, char *argv[]) {
             //3. Input stream (Source where you are reading characters from)
         //int *count = 0;
         while (fgets(line, sizeof(line), fp)) {
-            printf("%s", line);
+            //printf("%s", line);
             count++;
             if (count >= max_lines) {
+                printf("%s", line);
+                char *temp[2];
+                fgets(temp, sizeof(temp), stdin);
                 FILE *tty = fopen("/dev/tty", "r");
                 printf("--More--");
                 getc(tty);
                 fclose(tty);
                 count = 0;
             }
+
+
 
         }
         fclose(fp);
