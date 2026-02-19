@@ -1,0 +1,3 @@
+C:/Users/lkemp/OneDrive/Documents/School/Spring 26/Operating Systems/Code/SmallProgramming2/cmake-build-debug/CMakeFiles/fsmore.dir
+C:/Users/lkemp/OneDrive/Documents/School/Spring 26/Operating Systems/Code/SmallProgramming2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/lkemp/OneDrive/Documents/School/Spring 26/Operating Systems/Code/SmallProgramming2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
