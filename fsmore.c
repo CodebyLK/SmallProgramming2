@@ -6,7 +6,6 @@
 int main(const int argc, char *argv[]) {
     int count = 0;
 
-    //
     for (int i = 1; i < argc; i++) {
         FILE *fp = fopen(argv[i], "r");
         if (fp == NULL) {
@@ -41,27 +40,18 @@ int main(const int argc, char *argv[]) {
             //2. Maximum number of characters (Max buffer size - the safety net for char container
                 //(cannot exceed char line[24] in this example))
             //3. Input stream (Source where you are reading characters from)
-        //int *count = 0;
+
         while (fgets(line, sizeof(line), fp)) {
-            //printf("%s", line);
+            printf("%s", line);
             count++;
             if (count >= max_lines) {
-                printf("%s", line);
-                char *temp[2];
+                printf("\nPress Enter to Continue");
+                char temp[2];
                 fgets(temp, sizeof(temp), stdin);
-                getchar();
-                // FILE *tty = fopen("/dev/tty", "r");
-                // printf("--More--");
-                // getc(tty);
-                // fclose(tty);
                 count = 0;
             }
-
-
-
         }
         fclose(fp);
     }
-
     exit(0);
 }
